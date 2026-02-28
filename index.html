@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id="counter-section" class="w-[80%] mx-auto mt-4 flex flex-col gap-4 justify-center items-center border rounded-md">
+        <h1>Counter</h1>
+        <h2 id="counter">0</h2>
+        <div>
+            <button id="add-btn" class="btn">
+            Add(+)</button>
+            <button id="reset-btn" class="btn">
+            Reset</button>
+            <button id="subtract-btn" class="btn">
+            Subtract(-)</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("counter-section").addEventListener("click", (e) => {
+    let counter =
+    //convert to number type data
+    Number(document.getElementById("counter").innerText);
+    //make add-btn increase the counter value
+    if (e.target.id === "add-btn"){
+        counter++;
+    } else
+    //make subtract-btn decrease the counter value
+    if (e.target.id === "subtract-btn" && counter !== 0){
+        counter--;
+    } else
+    //make reset-btn restore the value to 0
+    if (e.target.id === "reset-btn"){
+        counter = 0;
+    }
+    //show the updated counter value
+    document.getElementById("counter").innerText = counter;
+});
+    </script>
+</body>   
+</html>
