@@ -8,29 +8,26 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <div id="counter-section" class="w-[80%] mx-auto mt-4 flex flex-col gap-4 justify-center items-center border rounded-md">
-        <h1>Counter</h1>
-        <h2 id="counter">0</h2>
+    <div id="counter-section" class="w-[80%] mx-auto my-4 flex flex-col gap-4 justify-center items-center border rounded-md bg-neutral-content">
+        <h1 class="text-4xl font-bold">Counter</h1>
+        <h2 id="counter" class="text-info text-3xl font-semibold">0</h2>
         <div>
-            <button id="add-btn" class="btn">
+            <button id="add-btn" class="btn btn-success text-green-900">
             Add(+)</button>
-            <button id="reset-btn" class="btn">
+            <button id="reset-btn" class="btn btn-neutral">
             Reset</button>
-            <button id="subtract-btn" class="btn">
+            <button id="subtract-btn" class="btn btn-error text-red-900">
             Subtract(-)</button>
         </div>
     </div>
     <script>
-        document.getElementById("counter-section").addEventListener("click", (e) => {
-    let counter =
-    //convert to number type data
-    Number(document.getElementById("counter").innerText);
+let counter = 0;      document.getElementById("counter-section").addEventListener("click", (e) => {
     //make add-btn increase the counter value
     if (e.target.id === "add-btn"){
         counter++;
     } else
     //make subtract-btn decrease the counter value
-    if (e.target.id === "subtract-btn" && counter !== 0){
+    if (e.target.id === "subtract-btn" && counter > 0){
         counter--;
     } else
     //make reset-btn restore the value to 0
